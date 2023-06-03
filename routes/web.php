@@ -45,5 +45,11 @@ Route::patch('/company/{company}', [CompanyController::class, 'update'])->name('
 //Ruta para mostrar los distintos dispositivos POS en la BD
 Route::get('/terminal', [AndroidTerminalController::class, 'index'])->name('terminals.index');
 
+//Ruta para mostrar la vista de creacion de un dispositivo POS
+Route::get('/terminals/create', [AndroidTerminalController::class, 'create'])->name('terminals.create');
+
 //Ruta para mostrar el contenido de un dispositivo POS
 Route::get('/terminal/{terminal}', [AndroidTerminalController::class, 'show'])->name('terminals.show');
+
+//Ruta para guardar los datos del dispositivo POS en la BD
+Route::post('/terminal', [AndroidTerminalController::class, 'store'])->name('terminals.store');

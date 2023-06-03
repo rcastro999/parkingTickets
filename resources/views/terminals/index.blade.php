@@ -2,7 +2,7 @@
 
     <header class="text-center">
         <h1 class="text-center text-info">Dispositivos POS</h1>
-        <a href="{{ route('terminals.create') }}" class="btn btn-success">Crear Nueva Empresa</a>
+        <a href="{{ route('terminals.create') }}" class="btn btn-success">Crear Nuevo Dispositivo POS</a>
     </header>
     <main class="bg-white d-flex container px-4 py-4 border my-4 rounded">
         <div class="container-sm">
@@ -18,7 +18,7 @@
                     @foreach ($terminals as $terminal)
                         <tr>
                             <td class="text-center">{{ $terminal->idTerminal }}</td>
-                            <td class="text-center"><a href="{{ route('terminals.show', $terminal) }}">{{ $terminal->imei }}</a></td>
+                            <td class="text-center"><a href="{{ route('terminals.show', $terminal->idTerminal) }}">{{ $terminal->imei }}</a></td>
                             <td class="text-center">{{ $terminal->datePurchase }}</td>
                             <td class="text-center">{{ $terminal->nameCompany }}</td>
                             <td class="text-center"><a href="#" class="btn btn-warning">Editar</a></td>
